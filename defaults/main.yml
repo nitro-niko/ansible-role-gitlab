@@ -81,3 +81,8 @@ gitlab_letsencrypt_auto_renew_hour: 1
 gitlab_letsencrypt_auto_renew_minute: 30
 gitlab_letsencrypt_auto_renew_day_of_month: "*/7"
 gitlab_letsencrypt_auto_renew: true
+
+# Proxy Configuration
+nginx_redirect_http_to_https: false
+registry_nginx_redirect_http_to_https: false
+mattermost_nginx_redirect_http_to_https: false
