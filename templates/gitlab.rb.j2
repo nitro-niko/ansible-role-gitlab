@@ -113,5 +113,18 @@ registry_nginx['ssl_certificate_key'] = "{{ gitlab_registry_nginx_ssl_certificat
 {% endfor %}
 {% endif %}
 
+# Proxy settings
+{% if nginx_redirect_http_to_https %}
+nginx['redirect_http_to_https'] = {{ nginx_redirect_http_to_https }}
+{% endif %}
+
+{% if registry_nginx_redirect_http_to_https %}
+registry_nginx['redirect_http_to_https'] = {{ registry_nginx_redirect_http_to_https }}
+{% endif %}
+
+{% if mattermost_nginx_redirect_http_to_https %}
+mattermost_nginx['redirect_http_to_https'] = {{ mattermost_nginx_redirect_http_to_https }}
+{% endif %}
+
 # To change other settings, see:
 # https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md#changing-gitlab-yml-settings
